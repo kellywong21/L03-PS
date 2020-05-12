@@ -20,7 +20,6 @@ public class Info extends AppCompatActivity {
     ArrayList<DailyCA> dailyCAList;
     int RequestCode1 = 1;
     String moduleCode,emailTo,email;
-    Integer weeks = 0;
 
 
 
