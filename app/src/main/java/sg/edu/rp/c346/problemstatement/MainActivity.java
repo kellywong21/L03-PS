@@ -1,5 +1,6 @@
 package sg.edu.rp.c346.problemstatement;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
     ListView lvModules;
     ArrayAdapter<String> aa;
     ArrayList<String> dailyCA = new ArrayList<>();
-    int requestCode = 1;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +28,18 @@ public class MainActivity extends AppCompatActivity {
         aa = new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_list_item_1,dailyCA);
         dailyCA.add("C347");
         lvModules.setAdapter(aa);
+        setTitle("P03-Class Journal");
 
         lvModules.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this,Info.class);
-
+                intent.putExtra("email","jason_lim@rp.edu.sg");
+                intent.putExtra("moduleCode","C347");
+                startActivity(intent);
             }
         });
 
-
     }
+
 }
